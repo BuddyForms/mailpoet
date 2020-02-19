@@ -23,7 +23,7 @@ class Radio {
     $fieldName = 'data[' . $this->rendererHelper->getFieldName($block) . ']';
     $fieldValidation = $this->rendererHelper->getInputValidation($block);
 
-    $html .= '<p class="mailpoet_paragraph">';
+    $html .= '<div class="mailpoet_paragraph">';
 
     $html .= $this->rendererHelper->renderLabel($block);
 
@@ -66,7 +66,7 @@ class Radio {
 
     $html .= '<span class="mailpoet_error_' . $block['id'] . '"></span>';
 
-    $html .= '</p>';
+    $html .= '</div>';
 
     return $html;
   }

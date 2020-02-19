@@ -16,9 +16,9 @@ class Html {
       $text = nl2br($text);
     }
 
-    $html .= '<p class="mailpoet_paragraph">';
+    $html .= '<div class="mailpoet_paragraph">';
     $html .= $text;
-    $html .= '</p>';
+    $html .= '</div>';
 
     return $html;
   }
