@@ -17,6 +17,7 @@ import Notices from './notices.jsx';
 import UnsavedChangesNotice from './unsaved_changes_notice.jsx';
 import FormStyles from './form_styles.jsx';
 import Preview from './preview.jsx';
+import FormBackground from './form_background.jsx';
 
 // Editor settings - see @wordpress/block-editor/src/store/defaults.js
 const editorSettings = {
@@ -67,12 +68,14 @@ export default () => {
                   <BlockSelectionClearer className="edit-post-visual-editor editor-styles-wrapper">
                     <BlockEditorKeyboardShortcuts />
                     <BlockEditorKeyboardShortcuts.Register />
-                    <WritingFlow>
-                      <ObserveTyping>
-                        <FormTitle />
-                        <BlockList />
-                      </ObserveTyping>
-                    </WritingFlow>
+                    <FormBackground>
+                      <WritingFlow>
+                        <ObserveTyping>
+                          <FormTitle />
+                          <BlockList />
+                        </ObserveTyping>
+                      </WritingFlow>
+                    </FormBackground>
                   </BlockSelectionClearer>
                 </div>
                 <div className="block-editor-editor-skeleton__sidebar">
