@@ -1,7 +1,4 @@
 import React from 'react';
-import {
-  CheckboxControl,
-} from '@wordpress/components';
 import PropTypes from 'prop-types';
 import MailPoet from 'mailpoet';
 import Settings from './settings.jsx';
@@ -12,12 +9,14 @@ const SegmentSelectEdit = ({ attributes, setAttributes }) => {
       return (<p className="mailpoet_error">{MailPoet.I18n.t('blockSegmentSelectNoLists')}</p>);
     }
     return attributes.values.map((value) => (
-      <CheckboxControl
-        label={value.name}
-        checked={!!value.isChecked}
-        disabled
-        key={value.id}
-      />
+      <label key={value.id}>
+        <input
+          type="checkbox"
+          disabled
+          checked={!!value.isChecked}
+        />
+        {value.name}
+      </label>
     ));
   };
 
